@@ -13,7 +13,8 @@
         <!-- Bootstrap JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
-        <!-- Custom styles for this template -->
+        <!-- Custom styles 
+          for this template -->
         <link href="carousel.css" rel="stylesheet">
         
         <title>Carousel Template for Bootstrap</title>
@@ -22,11 +23,13 @@
 ================================================== -->
   <body>
     <div class="container text-center">
-        <h1>CHEERLEADING</h1>
+      <h1 id="welcome"></h1> 
+      <h1>CHEERLEADING</h1>
         
         <div class="page-header">
         <h1><small>Let's learn about a world full of cheerleading!</small></h1>
         </div>
+      
         <p>
                         In cheerleading, you get to spread school spirit, make lasting friendships, and even compete for awards.
         </p>
@@ -110,5 +113,17 @@
     <script src="../../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      if(localStorage.getItem("user"))
+      {
+        $("#welcome").text("welcome back, " + localStorage.user);
+      }
+      else
+      {
+        var username = prompt("What is your name?");
+        localStorage.setItem("user", username);
+        $("#welcome").text("Welcome to my site, " + username);
+      }
+    </script>
   </body>
 </html>
